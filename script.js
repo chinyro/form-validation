@@ -39,11 +39,28 @@ function validateForm() {
     } 
 }
 
+// Store Data
+function storeFormData() {
+    const user = {
+        name: form.name.value,
+        phone: form.phone.value,
+        email: form.email.value,
+        website: form.website.value,
+        password: form.password.value,
+    };
+    // Action with user data
+    console.log(user); //APP pass this to server or DB
+}
+
 // Process Form
 function processFormData(event) {
     event.preventDefault();
     // Validate Form
     validateForm();
+    // Submit Data if Valid
+    if(isValid && passwordsMatch) {
+        storeFormData();
+    }
 }
 
 
